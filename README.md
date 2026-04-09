@@ -162,10 +162,10 @@ OPENAI_API_KEY=your-openai-api-key-here
 
 ## 🚀 Pipeline Walkthrough
 
-### Phase 1 — Snort Alert Generation & Ground Truth Matching
+### Phase 1 : Snort Alert Generation & Ground Truth Matching
 
 **What happens here:**  
-The 13 GB PCAP file is too large to process all at once, so it is split into 14 chunks of approximately 1 GB each. Snort 2.9 processes each chunk and generates alerts — one row per suspicious event. All 14 output files are merged into a single master dataset of 237,240 alerts.
+The 13 GB PCAP file is too large to process all at once, so it is split into 14 chunks of approximately 1 GB each. Snort 2.9 processes each chunk and generates alerts; one row per suspicious event. All 14 output files are merged into a single master dataset of 237,240 alerts.
 
 **The column-shift problem:**  
 Snort has a bug where it silently omits empty fields in its CSV output instead of writing an empty placeholder. This causes all subsequent columns in a row to shift left. A custom `fix_row()` function detects and corrects these shifts by anchoring on the protocol field, which is always expected at column index 8.
@@ -181,12 +181,12 @@ To know whether each Snort alert is a real attack or a false alarm, every alert 
 
 **Snort baseline:**
 - 107,107 True Positives (real attacks correctly flagged)
-- 130,133 False Positives (noise — 54.9% of all alerts)
+- 130,133 False Positives (noise : 54.9% of all alerts)
 - Precision: 0.4515 · Recall: 1.0000
 
 ---
 
-### Phase 2 — XGBoost False-Positive Suppression
+### Phase 2 : XGBoost False-Positive Suppression
 
 **What XGBoost does:**  
 XGBoost is a machine learning algorithm that builds 200 decision trees sequentially, where each tree learns from the mistakes of the previous ones. It is trained on the 237,240 labelled alerts to learn the difference between real attacks and noise.
@@ -194,7 +194,7 @@ XGBoost is a machine learning algorithm that builds 200 decision trees sequentia
 Instead of giving a binary yes/no answer, XGBoost assigns a **confidence score** between 0 and 1 to each alert. A score of 0.97 means 97% confident this is a real attack. A score of 0.03 means it is probably noise.
 
 **Feature engineering:**  
-From 31 original Snort columns, 12 features are kept. IP addresses are deliberately excluded — if the model learned that 172.16.0.1 is an attacker, it would be useless on any other network. We keep packet-level features like port numbers, TCP flags, and packet lengths.
+From 31 original Snort columns, 12 features are kept. IP addresses are deliberately excluded, if the model learned that 172.16.0.1 is an attacker, it would be useless on any other network. We keep packet-level features like port numbers, TCP flags, and packet lengths.
 
 **The threshold decision:**  
 The threshold is the cutoff that converts XGBoost's confidence score into a final decision:
@@ -220,7 +220,7 @@ One Snort rule — *"TCP Timestamp is outside of PAWS window"* — has 99.8% pre
 
 ---
 
-### Phase 3 — LLM Threat Triage (GPT-4o mini)
+### Phase 3 : LLM Threat Triage (GPT-4o mini)
 
 **Why XGBoost is not enough:**  
 After filtering, the analyst still receives 108,172 rows of raw data like this:
@@ -256,7 +256,7 @@ The entire LLM phase used 4,018 tokens and cost **$0.000603** — less than one 
 
 ---
 
-## 🔮 Next Step — GPT-2 Fine-Tuning
+## 🔮 Next Step : GPT-2 Fine-Tuning
 
 **Why this matters:**  
 GPT-4o mini works by calling OpenAI's external servers — a commercial, paid API. The final research objective is to instead fine-tune **GPT-2**, a smaller open-source language model whose weights and architecture are publicly available, on our own cybersecurity data.
