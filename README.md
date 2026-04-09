@@ -12,7 +12,7 @@ Every day, computer networks are attacked. Tools like **Snort** monitor network 
 
 This project builds a **three-layer pipeline** that:
 
-1. **Catches** all suspicious traffic with Snort — missing nothing
+1. **Catches** all suspicious traffic with Snort; missing nothing
 2. **Filters** the noise automatically using a machine learning model (XGBoost)
 3. **Explains** each confirmed attack in plain English using the GPT API (GPT-4o mini), including what the threat is, how dangerous it is, and exactly what to do about it
 
