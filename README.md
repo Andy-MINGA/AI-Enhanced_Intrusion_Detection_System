@@ -30,7 +30,7 @@ The result: 237,240 noisy alerts reduced to 108,172 confirmed threats with 99% p
 | Precision | 0.45 | **0.99** |
 | Recall | 1.00 | **1.00** |
 | FP Suppression | — | **99.2%** |
-| Total AI Cost | — | **$0.000603** |
+| Total API Cost | — | **$0.000603** |
 
 ---
 
