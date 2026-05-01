@@ -1,0 +1,8 @@
+{
+  "final_train_loss": 0.0504,
+  "best_val_loss": 0.0883413702249527,
+  "final_val_loss": 0.08901523798704147,
+  "total_steps": 1300,
+  "stopped_at_epoch": 8.828522920203735,
+  "overfitting_gap": 0.0006738677620887756
+}

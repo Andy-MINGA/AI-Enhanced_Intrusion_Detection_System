@@ -1,0 +1,128 @@
+{
+  "gpt4o_mini": {
+    "DoS Hulk": {
+      "attack_type": "DoS Hulk",
+      "threat_summary": "A high-volume HTTP GET flood attack targeting the web server, sending thousands of requests per second to exhaust server resources and cause denial of service.",
+      "attack_technique": "HTTP GET Flood",
+      "cve_reference": "None",
+      "severity": "Critical",
+      "recommended_action": "Block source IP at perimeter firewall. Enable rate limiting on load balancer. Contact ISP for upstream filtering if attack persists."
+    },
+    "DoS GoldenEye": {
+      "attack_type": "DoS GoldenEye",
+      "threat_summary": "GoldenEye exploits HTTP keep-alive connections to consume all available server threads, preventing legitimate users from connecting.",
+      "attack_technique": "HTTP Keep-Alive Connection Exhaustion",
+      "cve_reference": "None",
+      "severity": "Critical",
+      "recommended_action": "Limit concurrent HTTP connections per IP. Configure connection timeout thresholds. Deploy WAF with connection rate rules."
+    },
+    "DoS Slowhttptest": {
+      "attack_type": "DoS Slowhttptest",
+      "threat_summary": "Slowhttptest sends incomplete HTTP requests with abnormally long headers to exhaust server connection pools over time.",
+      "attack_technique": "Slow HTTP Header Attack",
+      "cve_reference": "None",
+      "severity": "High",
+      "recommended_action": "Set minimum header transmission rate. Configure request timeout. Update HTTP inspection rules to detect slow header patterns."
+    },
+    "DoS slowloris": {
+      "attack_type": "DoS slowloris",
+      "threat_summary": "Slowloris holds connections open by sending partial HTTP requests, exhausting the server connection pool and blocking legitimate traffic.",
+      "attack_technique": "Slow HTTP Request Attack",
+      "cve_reference": "None",
+      "severity": "Critical",
+      "recommended_action": "Implement connection timeout limits. Use reverse proxy with connection queuing. Apply rate limiting per source IP."
+    },
+    "Heartbleed": {
+      "attack_type": "Heartbleed",
+      "threat_summary": "Exploitation of CVE-2014-0160 in OpenSSL heartbeat extension. Attacker reads up to 64 KB of server memory per request, potentially exposing private keys and credentials.",
+      "attack_technique": "OpenSSL Heartbeat Buffer Over-Read",
+      "cve_reference": "CVE-2014-0160",
+      "severity": "Critical",
+      "recommended_action": "Immediately patch OpenSSL to >= 1.0.1g. Revoke and reissue all SSL/TLS certificates. Rotate all private keys. Invalidate active sessions."
+    }
+  },
+  "llama_base": {
+    "DoS Hulk": {
+      "attack_type": "Denial of Service (DoS)",
+      "threat_summary": "Reset outside window attack detected",
+      "attack_technique": "TCP Reset",
+      "cve_reference": "N/A",
+      "severity": "High",
+      "recommended_action": "Block the source IP address 172.16.0.1 and investigate the network traffic"
+    },
+    "DoS GoldenEye": {
+      "attack_type": "Denial of Service (DoS)",
+      "threat_summary": "GoldenEye DoS attack detected",
+      "attack_technique": "TCP Timestamp manipulation",
+      "cve_reference": "N/A",
+      "severity": "Critical",
+      "recommended_action": "Block the source IP (172.16.0.1) and investigate the network for potential vulnerabilities"
+    },
+    "DoS Slowhttptest": {
+      "attack_type": "Denial of Service (DoS)",
+      "threat_summary": "Slowhttptest attack detected",
+      "attack_technique": "Slowhttptest",
+      "cve_reference": "N/A",
+      "severity": "Critical",
+      "recommended_action": "Block the source IP address 172.16.0.1 and investigate the potential vulnerability"
+    },
+    "DoS slowloris": {
+      "attack_type": "Denial of Service (DoS)",
+      "threat_summary": "Slowloris attack detected, attempting to consume server resources",
+      "attack_technique": "TCP SYN flood",
+      "cve_reference": "N/A",
+      "severity": "Critical",
+      "recommended_action": "Block the source IP (172.16.0.1) and investigate the attacker's intent"
+    },
+    "Heartbleed": {
+      "attack_type": "Heartbleed",
+      "threat_summary": "Potential Heartbleed vulnerability exploitation detected",
+      "attack_technique": "Information Disclosure",
+      "cve_reference": "CVE-2014-0160",
+      "severity": "Critical",
+      "recommended_action": "Immediately patch vulnerable systems and reissue certificates"
+    }
+  },
+  "llama_finetuned": {
+    "DoS Hulk": {
+      "attack_type": "DoS Hulk",
+      "threat_summary": "A DoS Hulk attack is a type of denial-of-service attack that aims to overwhelm a target server by sending a large number of TCP requests, often with the reset flag set.",
+      "attack_technique": "TCP Flooding with Reset Flag",
+      "cve_reference": "None",
+      "severity": "Critical",
+      "recommended_action": "Implement rate limiting on the server, block the source IP, and monitor network traffic for similar attacks."
+    },
+    "DoS GoldenEye": {
+      "attack_type": "DoS GoldenEye",
+      "threat_summary": "The DoS GoldenEye attack is a type of denial-of-service attack that targets web servers by exploiting the TCP protocol. It sends a large number of requests with manipulated timestamps to overwhelm the server, causing it to become unresponsive.",
+      "attack_technique": "TCP Timestamp Manipulation",
+      "cve_reference": "None",
+      "severity": "Critical",
+      "recommended_action": "Implement rate limiting on the web server, monitor network traffic for unusual patterns, and consider deploying a Web Application Firewall (WAF) to filter out malicious traffic."
+    },
+    "DoS Slowhttptest": {
+      "attack_type": "DoS Slowhttptest",
+      "threat_summary": "A Slowhttptest attack is a type of Denial of Service (DoS) attack that targets web servers by sending slow and malformed HTTP requests, causing the server to consume excessive resources and become unresponsive.",
+      "attack_technique": "Slowloris",
+      "cve_reference": "None",
+      "severity": "Critical",
+      "recommended_action": "Implement rate limiting on incoming HTTP requests, monitor server performance, and consider deploying a Web Application Firewall (WAF) to filter out malicious traffic."
+    },
+    "DoS slowloris": {
+      "attack_type": "DoS Slowloris",
+      "threat_summary": "A denial-of-service attack that aims to keep many connections to a web server open and consume its resources, making it unavailable to legitimate users.",
+      "attack_technique": "TCP small segments flooding",
+      "cve_reference": "None",
+      "severity": "Critical",
+      "recommended_action": "Implement rate limiting on the web server, monitor network traffic for unusual patterns, and consider deploying a Web Application Firewall (WAF) to filter out malicious traffic."
+    },
+    "Heartbleed": {
+      "attack_type": "Heartbleed",
+      "threat_summary": "A confirmed Heartbleed attack has been detected, exposing sensitive data and potentially allowing an attacker to gain unauthorized access to the affected system.",
+      "attack_technique": "SSL/TLS vulnerability exploitation",
+      "cve_reference": "CVE-2014-0160",
+      "severity": "Critical",
+      "recommended_action": "Immediately patch all affected systems with the latest security updates, and consider reissuing SSL/TLS certificates to prevent further exploitation."
+    }
+  }
+}

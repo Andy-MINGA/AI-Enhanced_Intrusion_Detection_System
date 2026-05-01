@@ -1,0 +1,42 @@
+{
+  "DoS Hulk": {
+    "attack_type": "DoS Hulk",
+    "threat_summary": "A DoS Hulk attack is a type of denial-of-service attack that aims to overwhelm a target server by sending a large number of TCP requests, often with the reset flag set.",
+    "attack_technique": "TCP Flooding with Reset Flag",
+    "cve_reference": "None",
+    "severity": "Critical",
+    "recommended_action": "Implement rate limiting on the server, block the source IP, and monitor network traffic for similar attacks."
+  },
+  "DoS GoldenEye": {
+    "attack_type": "DoS GoldenEye",
+    "threat_summary": "The DoS GoldenEye attack is a type of denial-of-service attack that targets web servers by exploiting the TCP protocol. It sends a large number of requests with manipulated timestamps to overwhelm the server, causing it to become unresponsive.",
+    "attack_technique": "TCP Timestamp Manipulation",
+    "cve_reference": "None",
+    "severity": "Critical",
+    "recommended_action": "Implement rate limiting on the web server, monitor network traffic for unusual patterns, and consider deploying a Web Application Firewall (WAF) to filter out malicious traffic."
+  },
+  "DoS Slowhttptest": {
+    "attack_type": "DoS Slowhttptest",
+    "threat_summary": "A Slowhttptest attack is a type of Denial of Service (DoS) attack that targets web servers by sending slow and malformed HTTP requests, causing the server to consume excessive resources and become unresponsive.",
+    "attack_technique": "Slowloris",
+    "cve_reference": "None",
+    "severity": "Critical",
+    "recommended_action": "Implement rate limiting on incoming HTTP requests, monitor server performance, and consider deploying a Web Application Firewall (WAF) to filter out malicious traffic."
+  },
+  "DoS slowloris": {
+    "attack_type": "DoS Slowloris",
+    "threat_summary": "A denial-of-service attack that aims to keep many connections to a web server open and consume its resources, making it unavailable to legitimate users.",
+    "attack_technique": "TCP small segments flooding",
+    "cve_reference": "None",
+    "severity": "Critical",
+    "recommended_action": "Implement rate limiting on the web server, monitor network traffic for unusual patterns, and consider deploying a Web Application Firewall (WAF) to filter out malicious traffic."
+  },
+  "Heartbleed": {
+    "attack_type": "Heartbleed",
+    "threat_summary": "A confirmed Heartbleed attack has been detected, exposing sensitive data and potentially allowing an attacker to gain unauthorized access to the affected system.",
+    "attack_technique": "SSL/TLS vulnerability exploitation",
+    "cve_reference": "CVE-2014-0160",
+    "severity": "Critical",
+    "recommended_action": "Immediately patch all affected systems with the latest security updates, and consider reissuing SSL/TLS certificates to prevent further exploitation."
+  }
+}

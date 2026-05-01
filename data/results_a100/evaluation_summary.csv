@@ -1,0 +1,10 @@
+Metric,GPT-4o mini,LLaMA Base,LLaMA Fine-Tuned,Improvement,Gap to GPT-4o
+Json Validity,1.0,1.0,1.0,+0.0,+0.0
+Cve Accuracy,1.0,1.0,1.0,+0.0,+0.0
+Attack Id,1.0,0.6,1.0,+0.4,+0.0
+Severity,1.0,0.6,0.8,+0.2,-0.2
+Technique,1.0,0.134,0.132,-0.002,-0.868
+Bleu,1.0,0.373,0.424,+0.051,-0.576
+ROUGE-L,1.0,0.346,0.369,+0.023,-0.631
+Perplexity,N/A,42.78,40.22,-2.56 (lower is better),N/A
+Val Loss,N/A,N/A,0.0883 (A100) vs 0.1715 (T4),48.5% better on A100,N/A

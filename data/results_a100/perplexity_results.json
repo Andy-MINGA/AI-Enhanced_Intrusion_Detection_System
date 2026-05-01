@@ -1,0 +1,43 @@
+{
+  "perplexity": {
+    "base_model_no_finetuning": 45.04,
+    "after_t4_finetuning": 46.75,
+    "after_a100_finetuning": 40.22,
+    "improvement_a100_vs_base": 10.7,
+    "improvement_a100_vs_t4": 13.97,
+    "sentences_used": 10,
+    "note": "T4 run used rank 8 LoRA on 805 examples with fp16. A100 run used rank 64 LoRA on 2618 examples with bfloat16 and cosine LR schedule."
+  },
+  "validation_loss": {
+    "t4_run": 0.1715,
+    "a100_run": 0.0883,
+    "improvement_pct": 48.51
+  },
+  "training_config": {
+    "t4": {
+      "lora_rank": 8,
+      "dataset_size": 805,
+      "precision": "fp16",
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ],
+      "epochs": 3
+    },
+    "a100": {
+      "lora_rank": 64,
+      "dataset_size": 2618,
+      "precision": "bfloat16",
+      "target_modules": [
+        "q_proj",
+        "v_proj",
+        "k_proj",
+        "o_proj",
+        "gate_proj",
+        "up_proj",
+        "down_proj"
+      ],
+      "stopped_epoch": 8.8
+    }
+  }
+}

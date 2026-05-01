@@ -1,0 +1,168 @@
+{
+  "base_model_results": {
+    "DoS Hulk": {
+      "json_validity": 1.0,
+      "cve_accuracy": 1.0,
+      "attack_id": 0.5,
+      "severity": 0.0,
+      "technique": 0.0,
+      "bleu": 0.3252,
+      "rouge": {
+        "rouge1": 0.4466,
+        "rouge2": 0.1782,
+        "rougeL": 0.3107
+      }
+    },
+    "DoS GoldenEye": {
+      "json_validity": 1.0,
+      "cve_accuracy": 1.0,
+      "attack_id": 0.5,
+      "severity": 1.0,
+      "technique": 0.0,
+      "bleu": 0.3982,
+      "rouge": {
+        "rouge1": 0.3226,
+        "rouge2": 0.1758,
+        "rougeL": 0.3226
+      }
+    },
+    "DoS Slowhttptest": {
+      "json_validity": 1.0,
+      "cve_accuracy": 1.0,
+      "attack_id": 0.5,
+      "severity": 0.0,
+      "technique": 0.67,
+      "bleu": 0.3697,
+      "rouge": {
+        "rouge1": 0.3636,
+        "rouge2": 0.1395,
+        "rougeL": 0.2955
+      }
+    },
+    "DoS slowloris": {
+      "json_validity": 1.0,
+      "cve_accuracy": 1.0,
+      "attack_id": 0.5,
+      "severity": 1.0,
+      "technique": 0.0,
+      "bleu": 0.4062,
+      "rouge": {
+        "rouge1": 0.4375,
+        "rouge2": 0.1915,
+        "rougeL": 0.3542
+      }
+    },
+    "Heartbleed": {
+      "json_validity": 1.0,
+      "cve_accuracy": 1.0,
+      "attack_id": 1.0,
+      "severity": 1.0,
+      "technique": 0.0,
+      "bleu": 0.3637,
+      "rouge": {
+        "rouge1": 0.4694,
+        "rouge2": 0.3333,
+        "rougeL": 0.449
+      }
+    }
+  },
+  "finetuned_model_results": {
+    "DoS Hulk": {
+      "json_validity": 1.0,
+      "cve_accuracy": 1.0,
+      "attack_id": 1.0,
+      "severity": 1.0,
+      "technique": 0.33,
+      "bleu": 0.4708,
+      "rouge": {
+        "rouge1": 0.5672,
+        "rouge2": 0.2879,
+        "rougeL": 0.4179
+      }
+    },
+    "DoS GoldenEye": {
+      "json_validity": 1.0,
+      "cve_accuracy": 1.0,
+      "attack_id": 1.0,
+      "severity": 1.0,
+      "technique": 0.0,
+      "bleu": 0.3686,
+      "rouge": {
+        "rouge1": 0.3504,
+        "rouge2": 0.1778,
+        "rougeL": 0.3212
+      }
+    },
+    "DoS Slowhttptest": {
+      "json_validity": 1.0,
+      "cve_accuracy": 1.0,
+      "attack_id": 1.0,
+      "severity": 0.0,
+      "technique": 0.33,
+      "bleu": 0.3794,
+      "rouge": {
+        "rouge1": 0.4194,
+        "rouge2": 0.1803,
+        "rougeL": 0.3548
+      }
+    },
+    "DoS slowloris": {
+      "json_validity": 1.0,
+      "cve_accuracy": 1.0,
+      "attack_id": 1.0,
+      "severity": 1.0,
+      "technique": 0.0,
+      "bleu": 0.4366,
+      "rouge": {
+        "rouge1": 0.4194,
+        "rouge2": 0.2295,
+        "rougeL": 0.3548
+      }
+    },
+    "Heartbleed": {
+      "json_validity": 1.0,
+      "cve_accuracy": 1.0,
+      "attack_id": 1.0,
+      "severity": 1.0,
+      "technique": 0.0,
+      "bleu": 0.4663,
+      "rouge": {
+        "rouge1": 0.4733,
+        "rouge2": 0.2636,
+        "rougeL": 0.3969
+      }
+    }
+  },
+  "summary_averages": {
+    "base": {
+      "json_validity": 1.0,
+      "cve_accuracy": 1.0,
+      "attack_id": 0.6,
+      "severity": 0.6,
+      "technique": 0.134
+    },
+    "finetuned": {
+      "json_validity": 1.0,
+      "cve_accuracy": 1.0,
+      "attack_id": 1.0,
+      "severity": 0.8,
+      "technique": 0.132
+    },
+    "gpt4o": {
+      "json_validity": 1.0,
+      "cve_accuracy": 1.0,
+      "attack_id": 1.0,
+      "severity": 1.0,
+      "technique": 1.0
+    }
+  },
+  "perplexity": {
+    "base": 42.78,
+    "finetuned_a100": 40.22,
+    "finetuned_t4": 46.75
+  },
+  "validation_loss": {
+    "a100_run": 0.0883,
+    "t4_run": 0.1715
+  }
+}
