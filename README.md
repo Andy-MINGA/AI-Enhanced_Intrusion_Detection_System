@@ -60,12 +60,12 @@ hybrid-ids-pipeline/
 │
 ├── notebooks/
 │   ├── snort_iscx_pipeline.ipynb                # Phase 1: Snort + ground truth matching
-│   ├──                                          # Phase 2: Feature preparation
-│   ├──                                          # Phase 2: XGBoost training + threshold sweep
-│   ├──                                          # Phase 3a: GPT-4o mini API baseline
+│                                                # Phase 2: Feature preparation
+│                                                # Phase 2: XGBoost training + threshold sweep
+│                                                # Phase 3a: GPT-4o mini API baseline
 
-│   ├── LLaMA3_FineTuning_A100.ipynb             # Phase 3b: LLaMA 3 8B LoRA fine-tuning (A100)
-│   └──                                          # Phase 3b: 7-metric evaluation
+│   ├──  LLaMA3_FineTuning_A100.ipynb            # Phase 3b: LLaMA 3 8B LoRA fine-tuning (A100)
+│                                                # Phase 3b: 7-metric evaluation
 │
 ├── data/
 │   ├── alerts/                                  # These can be reproduced from the python code, sizes were large
