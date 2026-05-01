@@ -59,12 +59,13 @@ The result: 237,240 noisy alerts reduced to 108,172 confirmed threats with 99% p
 hybrid-ids-pipeline/
 │
 ├── notebooks/
-│   ├── cell_01_to_07_snort_processing.ipynb     # Phase 1: Snort + ground truth matching
-│   ├── cell_08_to_14_feature_engineering.ipynb  # Phase 2: Feature preparation
-│   ├── cell_15_xgboost.ipynb                    # Phase 2: XGBoost training + threshold sweep
-│   ├── cell_16_llm_gpt4o.ipynb                  # Phase 3a: GPT-4o mini API baseline
-│   ├── cell_17_llama_finetune.ipynb             # Phase 3b: LLaMA 3 8B LoRA fine-tuning (A100)
-│   └── cell_18_evaluation.ipynb                 # Phase 3b: 7-metric evaluation
+│   ├── snort_iscx_pipeline.ipynb                # Phase 1: Snort + ground truth matching
+│   ├──                                          # Phase 2: Feature preparation
+│   ├──                                          # Phase 2: XGBoost training + threshold sweep
+│   ├──                                          # Phase 3a: GPT-4o mini API baseline
+
+│   ├── LLaMA3_FineTuning_A100.ipynb             # Phase 3b: LLaMA 3 8B LoRA fine-tuning (A100)
+│   └──                                          # Phase 3b: 7-metric evaluation
 │
 ├── data/
 │   ├── alerts/                                  # These can be reproduced from the python code, sizes were large
