@@ -1,0 +1,23 @@
+{
+  "fold_train_losses": [
+    0.1491,
+    0.1507,
+    0.1434,
+    0.1475,
+    0.1382
+  ],
+  "fold_val_losses": [
+    0.131265327334404,
+    0.11927521973848343,
+    0.13412941992282867,
+    0.1390780359506607,
+    0.13172507286071777
+  ],
+  "mean_val_loss": 0.1310946151614189,
+  "std_val_loss": 0.006527936506405255,
+  "dataset_size": 2618,
+  "folds": 5,
+  "lora_rank": 64,
+  "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+  "precision": "bfloat16 \u2014 no quantisation (A100 CV run)"
+}
