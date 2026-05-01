@@ -67,7 +67,7 @@ hybrid-ids-pipeline/
 │   └── cell_18_evaluation.ipynb                 # Phase 3b: 7-metric evaluation
 │
 ├── data/
-│   ├── alerts/
+│   ├── alerts/                                  # These can be reproduced from the python code, sizes were large
 │   │   ├── master_malware_report2.csv           # Merged Snort alerts (237,240 rows)
 │   │   ├── audited_snort_results.csv            # Alerts with TP/FP labels
 │   │   ├── confirmed_tp_for_llm.csv             # Confirmed attacks for LLM (108,172 rows)
